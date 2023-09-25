@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing: 300px;
+}
+
+body {
+  margin: 0;
+  /* font-family: system-ui, sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  /* background-color: white; */
+  background-color: #18181b;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  /* border-bottom: solid 1px #aaa; */
+  /* background-color: #eee; */
+}
+
+/* nav a {
+  display: inline-block;
+  min-width: 9rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: solid 1px #aaa;
+  text-align: center;
+  text-decoration: none;
+  color: #555;
+}
+
+nav a[aria-current='page'] {
+  color: #000;
+  background-color: #d4d4d4;
+} */
+ul.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+nav a {
+  position: relative;
+  /* makes it so that the underline effect is at a certain distance */
+  padding-bottom: 0.75rem;
+  color: white;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  /* not visible naturally  */
+  bottom: 0%;
+  left: 0;
+  background-color: #1d4ed8;
+  /* theme color */
+  transition: all 0.3s ease;
+}
+
+/* make link after visible when hovered over */
+a:hover::after {
+  width: 100%;
+}
+
+/* ### time do button */
+
+button.btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #1d4ed8;
+  border-radius: 5px;
+  border: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #1e40af;
+}
+
+/* ### time for the header stuff */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 5rem, 2rem;
+}
+
+.blur {
+  position: absolute;
+  /* 1000px makes it really blurry */
+  /* the greater the 50px/1000px ratio is, the greater the shadow */
+  box-shadow: 0 0 1000px 50px #1d4ed8;
+  z-index: -100;
+}
+
+header {
+  position: relative;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+
+header .content h2 {
+  margin-bottom: 1rem;
+  color: #ccc;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+header .content h1 {
+  color: white;
+  /* this overrides the larger margin fsr <its below> */
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  /* spacing between lines of words */
+  line-height: 4rem;
+}
+
+header .content h1 span {
+  /* the fancy stuff */
+}
